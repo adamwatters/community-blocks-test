@@ -1,0 +1,107 @@
+<script>
+  text = "{{TEXT}}";
+  speed = 100;
+  direction = "{{DIRECTION}}";
+  backgroundColor = "rgba(0,0,0,0)";
+  textSize = 16;
+  textColor = "{{TEXT_COLOR}}";
+  fontFamily = "monospace";
+</script>
+<style>
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  html {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  body {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  #root {
+    opacity: 1;
+    overflow: hidden;
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+  #root.hidden {
+    opacity: 0;
+  }
+  .message {
+    position: absolute;
+    white-space: nowrap;
+  }
+</style>
+<div class="hidden" id="root"></div>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    var root = document.getElementById("root");
+    var message = document.createElement("div");
+    var direction = window.direction === "left" ? "left" : "right";
+    var opposite = window.direction === "left" ? "right" : "left";
+    message.classList.add("message");
+    var rawText =
+      text || "You should change the text at the top of the code block";
+    var messageText =
+      direction === "right" ? rawText.split(" ").reverse().join(" ") : rawText;
+    message.innerHTML = messageText;
+    root.appendChild(message);
+    var offset = 0;
+    const leftLoop = () => {
+      if (offset % 100 === 0 && message.getBoundingClientRect().right < 0) {
+        offset = 0;
+      } else {
+        offset = offset + 1;
+      }
+      message.style.left = `calc(100% - ${offset}px)`;
+      setTimeout(() => {
+        leftLoop();
+      }, 100 / parseInt(speed, 10));
+    };
+    const rightLoop = () => {
+      if (
+        offset % 100 === 0 &&
+        message.getBoundingClientRect().left >
+          root.getBoundingClientRect().width
+      ) {
+        offset = 0;
+      } else {
+        offset = offset + 1;
+      }
+      message.style.right = `calc(100% - ${offset}px)`;
+      setTimeout(() => {
+        rightLoop();
+      }, 100 / parseInt(speed, 10));
+    };
+    if (direction === "right") {
+      rightLoop();
+    } else {
+      leftLoop();
+    }
+    setTimeout(() => {}, 1000);
+    var style = document.createElement("style");
+    style.innerHTML = `   #root {     font-family: ${window.fontFamily};
+         font-size: ${Number(window.textSize) || 16}vw;
+         color: ${window.textColor || "pink"};
+         background-color: ${backgroundColor || "rgba(0,0,0,0)"}   } `;
+    document.head.appendChild(style);
+    document.getElementById("root").classList.remove("hidden");
+  });
+</script>
