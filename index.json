@@ -1,6 +1,6 @@
 [
     {
-        "path" : "/blocks/word-art",
+        "path" : "/blocks/word-art.html",
         "id" : "F1175628-B0AF-4CC9-BC3B-C7C26201FB8A",
         "inputs": [
             {"replaces":"TEXT","label": "word", "defaultValue": "rainbow", "type": "string"},
@@ -10,7 +10,7 @@
         "author" : "Adam Watters"
     },
     {
-      "path" : "/blocks/marquee",
+      "path" : "/blocks/marquee.html",
         "id" : "7352628D-C592-4D6B-AD13-6B7E81FCB0E9",
         "inputs": [
             {"replaces":"TEXT","label": "word", "defaultValue": "rainbow", "type": "string"},
