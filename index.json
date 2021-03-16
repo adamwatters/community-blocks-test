@@ -24,9 +24,9 @@
       "path" : "/blocks/twitch.html",
         "id" : "communityblock3",
         "inputs": [
-            {"replaces":"CHANNEL","label": "channel", "defaultValue": "kurtbenkert", "type": "string"},
+            {"replaces":"CHANNEL","label": "channel", "defaultValue": "kurtbenkert", "type": "string"}
         ],
-        "title" : "Text: Marquee",
+        "title" : "Video: Twitch Embed",
         "author" : "Universe HQ"
     }
 ]
