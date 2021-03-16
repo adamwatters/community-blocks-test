@@ -1,7 +1,7 @@
 [
     {
         "path" : "/blocks/word-art.html",
-        "id" : "F1175628-B0AF-4CC9-BC3B-C7C26201FB8A",
+        "id" : "communityblock1",
         "inputs": [
             {"replaces":"TEXT","label": "word", "defaultValue": "rainbow", "type": "string"},
             {"replaces":"STYLE","label": "style (options: rainbow, blues, superhero, radial, tilt, purple, horizon, italicOutline, slate)", "defaultValue": "rainbow", "type": "string"}
@@ -11,11 +11,20 @@
     },
     {
       "path" : "/blocks/marquee.html",
-        "id" : "7352628D-C592-4D6B-AD13-6B7E81FCB0E9",
+        "id" : "communityblock2",
         "inputs": [
             {"replaces":"TEXT","label": "word", "defaultValue": "rainbow", "type": "string"},
             {"replaces":"DIRECTION","label": "direction (options: left, right)", "defaultValue": "left", "type": "string"},
             {"replaces":"TEXT_COLOR","label": "text color", "defaultValue": "blue", "type": "string"}
+        ],
+        "title" : "Text: Marquee",
+        "author" : "Universe HQ"
+    },
+    {
+      "path" : "/blocks/twitch.html",
+        "id" : "communityblock3",
+        "inputs": [
+            {"replaces":"CHANNEL","label": "channel", "defaultValue": "kurtbenkert", "type": "string"},
         ],
         "title" : "Text: Marquee",
         "author" : "Universe HQ"
