@@ -1,39 +1,101 @@
 [
   {
-    "path" : "/blocks/word-art.html",
-    "id" : "communityblock1",
+    "path": "/blocks/word-art.html",
+    "id": "communityblock1",
     "inputs": [
-        {"replaces":"TEXT","label": "word", "defaultValue": "rainbow", "type": "string"},
-        {"replaces":"STYLE","label": "style (options: rainbow, blues, superhero, radial, tilt, purple, horizon, italicOutline, slate)", "defaultValue": "rainbow", "type": "string"}
+      {
+        "replaces": "TEXT",
+        "label": "word",
+        "defaultValue": "rainbow",
+        "type": "string"
+      },
+      {
+        "replaces": "STYLE",
+        "label": "style (options: rainbow, blues, superhero, radial, tilt, purple, horizon, italicOutline, slate)",
+        "defaultValue": "rainbow",
+        "type": "string"
+      }
     ],
-    "title" : "Text: WordArt",
-    "author" : "Adam Watters"
+    "title": "Text: WordArt",
+    "author": "Adam Watters"
   },
   {
-    "path" : "/blocks/marquee.html",
-    "id" : "communityblock2",
+    "path": "/blocks/marquee.html",
+    "id": "communityblock2",
     "inputs": [
-        {"replaces":"TEXT","label": "word", "defaultValue": "rainbow", "type": "string"},
-        {"replaces":"DIRECTION","label": "direction (options: left, right)", "defaultValue": "left", "type": "string"},
-        {"replaces":"TEXT_COLOR","label": "text color", "defaultValue": "blue", "type": "string"}
+      {
+        "replaces": "TEXT",
+        "label": "word",
+        "defaultValue": "rainbow",
+        "type": "string"
+      },
+      {
+        "replaces": "DIRECTION",
+        "label": "direction (options: left, right)",
+        "defaultValue": "left",
+        "type": "string"
+      },
+      {
+        "replaces": "TEXT_COLOR",
+        "label": "text color",
+        "defaultValue": "blue",
+        "type": "string"
+      }
     ],
-    "title" : "Text: Marquee",
-    "author" : "Universe HQ"
+    "title": "Text: Marquee",
+    "author": "Universe HQ"
   },
   {
-    "path" : "/blocks/twitch.html",
-    "id" : "communityblock3",
+    "path": "/blocks/twitch.html",
+    "id": "communityblock3",
     "inputs": [
-        {"replaces":"CHANNEL","label": "channel", "defaultValue": "kurtbenkert", "type": "string"}
+      {
+        "replaces": "CHANNEL",
+        "label": "channel",
+        "defaultValue": "kurtbenkert",
+        "type": "string"
+      }
     ],
-    "title" : "Video: Twitch Embed",
-    "author" : "Universe HQ"
+    "title": "Video: Twitch Embed",
+    "author": "Universe HQ"
   },
   {
-    "path" : "/blocks/matrix.html",
-    "id" : "39322883-C720-4338-B9DB-3BAFD8E7FE90",
+    "path": "/blocks/matrix.html",
+    "id": "39322883-C720-4338-B9DB-3BAFD8E7FE90",
     "inputs": [],
-    "title" : "Fun: Matrix Background ",
-    "author" : "Bharat Makfee"
+    "title": "Fun: Matrix Background ",
+    "author": "Bharat Makfee"
+  },
+  {
+    "path": "/blocks/countdown.html",
+    "id": "communityblock5",
+    "inputs": [
+      {
+        "replaces": "YEAR",
+        "label": "year (eg: 2022)",
+        "defaultValue": "2022",
+        "type": "string"
+      },
+      {
+        "replaces": "MONTH",
+        "label": "month (1 - 12)",
+        "defaultValue": "left",
+        "type": "string"
+      },
+      {
+        "replaces": "DAY",
+        "label": "day (1 - 31)",
+        "defaultValue": "left",
+        "type": "string"
+      },
+      {
+        "replaces": "MESSAGE",
+        "label": "message",
+        "defaultValue": "Deal Ends Soon",
+        "type": "string"
+      }
+    ],
+    "title": "Utility: Countdown",
+    "author": "Universe HQ"
   }
 ]

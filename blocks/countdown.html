@@ -1,0 +1,102 @@
+<html>
+  <script>
+    //set the date and time you want to count down to in the variables below
+    // Time must be set in UTC - use this tool https://www.thetimezoneconverter.com\/
+    // to convert your local time to UTC.
+    window.year = "{{YEAR}}";
+    window.month = "{{MONTH}}";
+    window.day = "{{DAY}}";
+    window.hour = "{{HOUR}}";
+    window.minute = 59;
+    window.second = 59;
+    window.message = "{{MESSAGE}}";
+    window.expiredMessage = "Ticket Sales Closed!";
+    window.backgroundImage =
+      "https://images.unsplash.com\/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=40&bri=-22";
+    window.backgroundColor = "blue";
+  </script>
+  <style media="screen">
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-size: cover;
+      background-position: center;
+    }
+    h1 {
+      font-size: 9vw;
+      text-align: center;
+      color: white;
+      font-family: "Helvetica Neue Std", "Helvetica", sans-serif;
+      transition: opacity 1s;
+      opacity: 1;
+    }
+    #content {
+      transition: opacity 1s;
+      opacity: 1;
+    }
+    #content.hidden {
+      opacity: 0;
+    }
+  </style>
+  <div class="hidden" id="content">
+    <h1 id="message"></h1>
+    <h1 id="counter"></h1>
+  </div>
+  <script type="text/javascript">
+    year = typeof window.year === "number" ? window.year : 1;
+    month = typeof window.month === "number" ? window.month : 0;
+    day = typeof window.day === "number" ? window.day : 1;
+    hour = typeof window.hour === "number" ? window.hour : 1;
+    minute = typeof window.minute === "number" ? window.minute : 1;
+    second = typeof window.second === "number" ? window.second : 1;
+    let firstRender = true;
+    document.getElementById("message").innerHTML =
+      window.message || "Countdown";
+    var style = document.createElement("style");
+    style.innerHTML = `        body {            background-image: url(${
+      window.backgroundImage || ""
+    });            background-color: ${
+      window.backgroundColor || "rgba(0,0,0,0)"
+    };        }    `;
+    document.head.appendChild(style);
+    const countDownDate = Date.UTC(year, month, day, hour, minute, second, 0);
+    const x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      const daysUntil = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hoursUntil = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutesUntil = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const secondsUntil = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("counter").innerHTML =
+        daysUntil +
+        "d " +
+        hoursUntil +
+        "h " +
+        minutesUntil +
+        "m " +
+        secondsUntil +
+        "s ";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("content").innerHTML = `<h1>${
+          window.expiredMessage || "EXPIRED"
+        }</h1>`;
+      }
+      if (firstRender) {
+        document.getElementById("content").classList.remove("hidden");
+        firstRender = false;
+      }
+    }, 1000);
+  </script>
+</html>
