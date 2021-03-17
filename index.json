@@ -103,9 +103,9 @@
     "id": "communityblock5",
     "inputs": [
       {
-      "replaces": "URI",
-      "label": "URI (found in share options)",
-      "defaultValue": "spotify:show:3sjJhVTfqUFYXPUHAHubvG",
+      "replaces": "SHARE_LINK",
+      "label": "Share Link",
+      "defaultValue": "https://open.spotify.com/show/3sjJhVTfqUFYXPUHAHubvG",
       "type": "string"
       }],
     "title": "Embed: Spotify",
