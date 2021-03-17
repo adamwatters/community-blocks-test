@@ -12,7 +12,20 @@
   }
   </style>
   <body>
-    <iframe src="{{SHARE_LINK}}" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </body>
+  <script>
+    const iframe = document.createElement(iframe)
+    const url = new URL("{{SHARE_LINK}}")
+    const path = url.pathname
+    const pathAsArray = path.split('/')
+    const URI = pathAsArray[pathAsArray.length - 1]
+    iframe.width = "100%"
+    iframe.height = "232"
+    iframe.frameborder="0"
+    iframe.allowtransparency="true"
+    iframe.allow="encrypted-media"
+    iframe.src = `https://open.spotify.com/embed-podcast/episode/${URI}`
+    document.body.appendChild(iframe)
+  </script>
 </html>
 
