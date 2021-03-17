@@ -15,6 +15,7 @@
   </body>
   <script>
     const iframe = document.createElement(iframe)
+    document.body.appendChild(iframe)
     const url = new URL("{{SHARE_LINK}}")
     const path = url.pathname
     const pathAsArray = path.split('/')
@@ -25,7 +26,6 @@
     iframe.allowtransparency="true"
     iframe.allow="encrypted-media"
     iframe.src = `https://open.spotify.com/embed-podcast/episode/${URI}`
-    document.body.appendChild(iframe)
   </script>
 </html>
 
