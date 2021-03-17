@@ -61,7 +61,7 @@
   },
   {
     "path": "/blocks/matrix.html",
-    "id": "39322883-C720-4338-B9DB-3BAFD8E7FE90",
+    "id": "communityblock4",
     "inputs": [],
     "title": "Fun: Matrix Background ",
     "author": "Bharat Makfee"
@@ -96,6 +96,19 @@
       }
     ],
     "title": "Utility: Countdown",
+    "author": "Universe HQ"
+  },
+  {
+    "path": "/blocks/spotify.html",
+    "id": "communityblock5",
+    "inputs": [
+      {
+      "replaces": "URI",
+      "label": "URI (found in share options)",
+      "defaultValue": "spotify:show:3sjJhVTfqUFYXPUHAHubvG",
+      "type": "string"
+      }],
+    "title": "Embed: Spotify",
     "author": "Universe HQ"
   }
 ]
