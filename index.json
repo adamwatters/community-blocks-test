@@ -110,5 +110,18 @@
       }],
     "title": "Embed: Spotify",
     "author": "Universe HQ"
+  },
+  {
+    "path": "/blocks/giphy.html",
+    "id": "communityblock6",
+    "inputs": [
+      {
+      "replaces": "GIPHY_LINK",
+      "label": "Giphy Link",
+      "defaultValue": "https://media.giphy.com/media/fojJlPjoRgRpe/giphy.gif",
+      "type": "string"
+      }],
+    "title": "Media: Giphy",
+    "author": "Universe HQ"
   }
 ]
